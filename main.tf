@@ -13,7 +13,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "rg" {
   name     = "simple-static-app-rg"
-  location = "eastasia"
+  location = "East US"
 }
 
 resource "azurerm_static_site" "example" {
@@ -26,12 +26,4 @@ resource "azurerm_static_site" "example" {
 
 output "static_web_app_url" {
   value = azurerm_static_site.example.default_host_name
-}
-
-output "static_web_app_name" {
-  value = azurerm_static_site.example.name
-}
-
-output "resource_group_name" {
-  value = azurerm_resource_group.rg.name
 }
